@@ -12,6 +12,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
     public String msg;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,11 +23,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkClicked(View v) {
-        // make it possible to check and uncheck the checkboxes
-        Log.d("potato", "checkClicked: ");
         //I couldn't find out how to use the two statements below
         //CheckBox checkbox = (CheckBox) v;
         //String checkBoxInfo = checkbox.getText().toString();
+
         CheckBox checkBox1 = findViewById(R.id.checkBox1);
         CheckBox checkBox2 = findViewById(R.id.checkBox2);
         CheckBox checkBox3 = findViewById(R.id.checkBox3);
@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         if (checkBox1.isChecked()) hat.setVisibility(View.VISIBLE); else hat.setVisibility(View.INVISIBLE);
         if (checkBox2.isChecked()) arms.setVisibility(View.VISIBLE); else arms.setVisibility(View.INVISIBLE);
         if (checkBox3.isChecked()) eyes.setVisibility(View.VISIBLE); else eyes.setVisibility(View.INVISIBLE);
-        if (checkBox4.isChecked()) ears.setVisibility(View.VISIBLE); else ears.setVisibility(View.INVISIBLE);
-        if (checkBox5.isChecked()) eyebrows.setVisibility(View.VISIBLE); else eyebrows.setVisibility(View.INVISIBLE);
+        if (checkBox4.isChecked()) eyebrows.setVisibility(View.VISIBLE); else eyebrows.setVisibility(View.INVISIBLE);
+        if (checkBox5.isChecked()) ears.setVisibility(View.VISIBLE); else ears.setVisibility(View.INVISIBLE);
         if (checkBox6.isChecked()) mustache.setVisibility(View.VISIBLE); else mustache.setVisibility(View.INVISIBLE);
         if (checkBox7.isChecked()) nose.setVisibility(View.VISIBLE); else nose.setVisibility(View.INVISIBLE);
         if (checkBox8.isChecked()) shoes.setVisibility(View.VISIBLE); else shoes.setVisibility(View.INVISIBLE);
