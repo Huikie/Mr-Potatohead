@@ -20,12 +20,83 @@ public class MainActivity extends AppCompatActivity {
         // to make sure only the body is displayed at first
         ImageView body = findViewById(R.id.body);
         body.setVisibility(View.VISIBLE);
+
+        if(savedInstanceState != null){
+
+            int hat_vis = savedInstanceState.getInt("hat", 0);
+            ImageView hat = findViewById(R.id.hat);
+            hat.setVisibility(hat_vis);
+
+            int arms_vis = savedInstanceState.getInt("arms",0);
+            ImageView arms = findViewById(R.id.arms);
+            arms.setVisibility(arms_vis);
+
+            int eyes_vis = savedInstanceState.getInt("eyes",0);
+            ImageView eyes = findViewById(R.id.eyes);
+            eyes.setVisibility(eyes_vis);
+
+            int eyebrows_vis = savedInstanceState.getInt("eyebrows",0);
+            ImageView eyebrows = findViewById(R.id.eyebrows);
+            eyebrows.setVisibility(eyebrows_vis);
+
+            int ears_vis = savedInstanceState.getInt("ears",0);
+            ImageView ears = findViewById(R.id.ears);
+            ears.setVisibility(ears_vis);
+
+            int mustache_vis = savedInstanceState.getInt("mustache",0);
+            ImageView mustache = findViewById(R.id.mustache);
+            mustache.setVisibility(mustache_vis);
+
+            int nose_vis = savedInstanceState.getInt("nose",0);
+            ImageView nose = findViewById(R.id.nose);
+            nose.setVisibility(nose_vis);
+
+            int shoes_vis = savedInstanceState.getInt("shoes",0);
+            ImageView shoes = findViewById(R.id.shoes);
+            shoes.setVisibility(shoes_vis);
+
+            int mouth_vis = savedInstanceState.getInt("mouth",0);
+            ImageView mouth = findViewById(R.id.mouth);
+            mouth.setVisibility(mouth_vis);
+
+            int glasses_vis = savedInstanceState.getInt("glasses",0);
+            ImageView glasses = findViewById(R.id.glasses);
+            glasses.setVisibility(glasses_vis);
+        }
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState); // always call super
+
+        ImageView hat = findViewById(R.id.hat);
+        ImageView arms = findViewById(R.id.arms);
+        ImageView eyes = findViewById(R.id.eyes);
+        ImageView eyebrows = findViewById(R.id.eyebrows);
+        ImageView ears = findViewById(R.id.ears);
+        ImageView mustache = findViewById(R.id.mustache);
+        ImageView nose = findViewById(R.id.nose);
+        ImageView shoes = findViewById(R.id.shoes);
+        ImageView mouth = findViewById(R.id.mouth);
+        ImageView glasses = findViewById(R.id.glasses);
+
+        outState.putInt("hat", hat.getVisibility());
+        outState.putInt("arms", arms.getVisibility());
+        outState.putInt("eyes", eyes.getVisibility());
+        outState.putInt("eyebrows", eyebrows.getVisibility());
+        outState.putInt("ears", ears.getVisibility());
+        outState.putInt("mustache", mustache.getVisibility());
+        outState.putInt("nose", nose.getVisibility());
+        outState.putInt("shoes", shoes.getVisibility());
+        outState.putInt("mouth", mouth.getVisibility());
+        outState.putInt("glasses", glasses.getVisibility());
+
     }
 
     public void checkClicked(View v) {
         //I couldn't find out how to use the two statements below
         //CheckBox checkbox = (CheckBox) v;
         //String checkBoxInfo = checkbox.getText().toString();
+        //System.out.println(checkBoxInfo);
 
         CheckBox checkBox1 = findViewById(R.id.checkBox1);
         CheckBox checkBox2 = findViewById(R.id.checkBox2);
