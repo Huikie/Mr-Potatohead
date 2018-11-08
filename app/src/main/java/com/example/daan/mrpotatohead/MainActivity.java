@@ -1,5 +1,6 @@
 package com.example.daan.mrpotatohead;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,13 +11,13 @@ import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity {
-    public String msg;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         // to make sure only the body is displayed at first
         ImageView body = findViewById(R.id.body);
         body.setVisibility(View.VISIBLE);
