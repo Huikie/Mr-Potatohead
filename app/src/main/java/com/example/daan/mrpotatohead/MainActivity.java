@@ -1,27 +1,23 @@
 package com.example.daan.mrpotatohead;
 
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 
-
-
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        // to make sure only the body is displayed at first
+
+        // To make sure the body is displayed at first.
         ImageView body = findViewById(R.id.body);
         body.setVisibility(View.VISIBLE);
 
+        // Retrieve the state (visible or invisible) of images if there are images that were preserved in the onSavedInstanceState.
         if(savedInstanceState != null){
 
             int hat_vis = savedInstanceState.getInt("hat", 0);
@@ -65,9 +61,11 @@ public class MainActivity extends AppCompatActivity {
             glasses.setVisibility(glasses_vis);
         }
     }
+
+    // Preserve shown images.
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState); // always call super
+        super.onSaveInstanceState(outState);
 
         ImageView hat = findViewById(R.id.hat);
         ImageView arms = findViewById(R.id.arms);
@@ -90,14 +88,13 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("shoes", shoes.getVisibility());
         outState.putInt("mouth", mouth.getVisibility());
         outState.putInt("glasses", glasses.getVisibility());
-
     }
 
+    // The method that will be called whenever someone selects or unselects a checkbox.
     public void checkClicked(View v) {
         //I couldn't find out how to use the two statements below
         //CheckBox checkbox = (CheckBox) v;
         //String checkBoxInfo = checkbox.getText().toString();
-        //System.out.println(checkBoxInfo);
 
         CheckBox checkBox1 = findViewById(R.id.checkBox1);
         CheckBox checkBox2 = findViewById(R.id.checkBox2);
@@ -110,7 +107,6 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBox9 = findViewById(R.id.checkBox9);
         CheckBox checkBox10 = findViewById(R.id.checkBox10);
 
-
         ImageView hat = findViewById(R.id.hat);
         ImageView arms = findViewById(R.id.arms);
         ImageView eyes = findViewById(R.id.eyes);
@@ -122,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView mouth = findViewById(R.id.mouth);
         ImageView glasses = findViewById(R.id.glasses);
 
+        // Link the images to checkboxes and set them visible when checked and invisible when unchecked.
         if (checkBox1.isChecked()) hat.setVisibility(View.VISIBLE); else hat.setVisibility(View.INVISIBLE);
         if (checkBox2.isChecked()) arms.setVisibility(View.VISIBLE); else arms.setVisibility(View.INVISIBLE);
         if (checkBox3.isChecked()) eyes.setVisibility(View.VISIBLE); else eyes.setVisibility(View.INVISIBLE);
