@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // Preserve shown images.
+    /** Preserve shown images.*/
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -90,11 +90,8 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("glasses", glasses.getVisibility());
     }
 
-    // The method that will be called whenever someone selects or unselects a checkbox.
+    /** The method that will be called whenever someone selects or unselects a checkbox.*/
     public void checkClicked(View v) {
-        //I couldn't find out how to use the two statements below
-        //CheckBox checkbox = (CheckBox) v;
-        //String checkBoxInfo = checkbox.getText().toString();
 
         CheckBox checkBox1 = findViewById(R.id.checkBox1);
         CheckBox checkBox2 = findViewById(R.id.checkBox2);
