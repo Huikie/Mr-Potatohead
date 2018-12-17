@@ -6,7 +6,7 @@ This app displays a “Mr. Potato Head” toy on the screen. The toy has several
 ## Implemented extra's
 - The app is compatible to users that want to use the app in landscape mode.
 
-This extra feature is shown in the section "Screenshots of the app".
+This extra feature is shown in the section "Screenshots of the app" (second image).
 ## Screenshots of the app
 ![](https://github.com/Huikie/Mr-Potatohead/blob/master/doc/first_screen.png)
 ![](https://github.com/Huikie/Mr-Potatohead/blob/master/doc/first_screen_lnd.png)
